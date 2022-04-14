@@ -1,0 +1,10 @@
+<div class="image_container" [style.width.px]="maxWidth > 300 ? 300 : maxWidth">
+  <img [src]="photoURL" (click)="this.handleClick()" />
+  <div *ngIf="lastPhoto" class="image_overlay" (click)="this.handleClick()">
+    <div class="text_container text-20">Еще {{ leastCount }} фото</div>
+  </div>
+</div>
+
+<div *ngIf="showModal" class="modal" (click)="this.handleClick()">
+  <img [src]="photoURL" />
+</div>

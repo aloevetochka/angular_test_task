@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+%montBold {
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+
+%montExtraBold {
+  font-family: "Montserrat";
+  font-weight: 800;
+}
+
+%montRegular {
+  font-family: "Montserrat";
+  font-weight: 400;
+}
+
+$basic: #00a4f7;
+$basicDark: #128ace;
+$greyDark: #adadad;
+$black: #333333;
+$white: #ffffff;
+$copy: #fff2c3;
+$greyLight: #faf9fa;
+
+$lastBack: #faf9fa;
+
+$mobile: 400px;
+
+.text-20 {
+  @extend %montRegular;
+  font-size: 20px;
+  max-width: 985px;
+  line-height: 160%;
+}
+
+.text-18 {
+  @extend %montRegular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.text-16 {
+  @extend %montRegular;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.grey-text {
+  @extend %montRegular;
+  font-size: 18px;
+  color: $greyDark;
+  max-width: 315px;
+  line-height: 160%;
+}
+
+*,
+body {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}

@@ -1,0 +1,12 @@
+@import "../../styles.scss";
+
+p {
+  font-size: 20px;
+  color: $basicDark;
+  height: 100%;
+  @extend %montBold;
+  &:hover {
+    color: #0b5f91;
+    cursor: pointer;
+  }
+}

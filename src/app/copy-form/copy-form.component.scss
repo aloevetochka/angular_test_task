@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+
+.copy-form-container {
+  background-color: $copy;
+
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .a-link {
+    margin: 8px 0px 8px 17px;
+
+    a {
+      @extend %montBold;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 160%;
+      color: $black;
+      text-decoration-line: underline;
+    }
+  }
+
+  img {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .copy-form-container {
+    min-height: 77px;
+    max-width: 335px;
+    width: 100%;
+    .a-link {
+      max-width: 230px;
+      word-wrap: break-word;
+    }
+  }
+}

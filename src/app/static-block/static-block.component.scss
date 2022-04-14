@@ -1,0 +1,16 @@
+@import "../../styles.scss";
+
+.st-b-title {
+  @extend %montBold;
+  font-size: 40px;
+}
+
+.text-18 {
+  margin-top: 18px;
+}
+
+@media (max-width: $mobile) {
+  .st-b-title {
+    font-size: 26px;
+  }
+}

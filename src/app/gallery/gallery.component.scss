@@ -1,0 +1,12 @@
+@import "../../styles.scss";
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+.flex-between {
+  justify-content: space-between;
+}

@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+
+.gallery-block-container {
+  margin-bottom: 190px;
+  position: relative;
+  margin-top: 90px;
+
+  .width {
+    max-width: 1057px;
+  }
+
+  .title {
+    @extend %montBold;
+    font-size: 48px;
+    line-height: 120%;
+  }
+  .text {
+    @extend %montRegular;
+    font-size: 20px;
+    line-height: 160%;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  .text-18 {
+    margin-top: 32px;
+    margin-bottom: 20px;
+  }
+
+  .text-16 {
+    margin-top: 19px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .title {
+    font-size: 30px !important;
+  }
+}

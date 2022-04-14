@@ -1,0 +1,14 @@
+@import "../../styles.scss";
+
+.num-list-item {
+  display: flex;
+
+  margin: 25px 0px 25px 15px;
+
+  .number {
+    @extend %montBold;
+    font-size: 18px;
+    color: $basic;
+    margin-right: 31px;
+  }
+}

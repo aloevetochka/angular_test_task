@@ -1,0 +1,146 @@
+@import "../../styles.scss";
+
+.cnt {
+  display: flex;
+}
+.form-block-container {
+  width: 1088px;
+  position: relative;
+  img {
+    position: absolute;
+    margin-top: -80px;
+    margin-left: -300px;
+  }
+
+  .title {
+    @extend %montBold;
+    font-size: 48px;
+    line-height: 120%;
+  }
+  .form-block {
+    margin-top: 50px;
+
+    .info-form {
+      input {
+        width: 538px;
+        height: 50px;
+        margin-bottom: 30px;
+
+        @extend %montRegular;
+        font-size: 18px;
+        line-height: 160%;
+        padding-left: 16px;
+      }
+    }
+    .text-form {
+      textArea {
+        width: 538px;
+        height: 130px;
+        margin-bottom: 30px;
+
+        @extend %montRegular;
+        font-size: 18px;
+        line-height: 160%;
+        padding-left: 16px;
+        padding-top: 5px;
+      }
+    }
+    .txt {
+      @extend %montRegular;
+      color: $greyDark;
+      margin-left: 49px;
+      margin-top: 3px;
+      line-height: 160%;
+    }
+    .check-text {
+      @extend %montRegular;
+      font-size: 16px;
+      line-height: 160%;
+      margin-left: 10px;
+      width: 50%;
+    }
+    .check-txt {
+      margin-left: 25px;
+    }
+    .btn-container {
+      margin-top: 30px;
+      .done-btn {
+        button {
+          min-width: 306px;
+          height: 60px;
+          @extend %montBold;
+          font-size: 20px;
+          line-height: 160%;
+          background-color: $basic;
+          margin-bottom: 80px;
+        }
+      }
+      .btn-txt {
+        margin-left: 285px;
+      }
+    }
+    .field-checkbox {
+      max-width: 550px;
+    }
+
+    p-checkbox {
+      margin-bottom: 3px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .form-block-container {
+    max-width: 335px;
+    position: "relative";
+
+    img {
+      left: 280px;
+      top: -80px;
+    }
+
+    .title {
+      padding-top: 120px;
+      font-size: 30px;
+    }
+    .form-block {
+      .info-form {
+        input {
+          width: 335px;
+          margin-bottom: 3px;
+        }
+      }
+      .text-form {
+        textArea {
+          width: 335px;
+          margin-bottom: 3px;
+        }
+      }
+      .txt {
+        max-width: 100%;
+        margin-bottom: 20px;
+        margin-left: 3px;
+      }
+
+      .check-container {
+        .check-text {
+          min-width: 85%;
+        }
+      }
+      .btn-txt {
+        margin-left: 0px !important;
+      }
+    }
+  }
+
+  .cnt {
+    max-width: 400px;
+    flex-wrap: wrap;
+  }
+
+  .none {
+    display: none;
+  }
+}

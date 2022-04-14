@@ -1,0 +1,34 @@
+<div class="footer-container">
+  <div class="footer-info">
+    <div class="contacts-container">
+      <div class="adress">
+        <div class="footer-title">Санкт-Петербург</div>
+        <div class="footer-text">Большой Проспект П. С., 5, офис 55</div>
+      </div>
+      <div class="mail">
+        <div class="footer-title">mail@yandex.ru</div>
+        <div class="footer-text">+7 (981) 131-64-98</div>
+      </div>
+    </div>
+    <div class="contact-btn">
+      <button
+        pButton
+        type="button"
+        label="Написать нам"
+        class="p-button-outlined btn-style"
+        (click)="scroll('home')"
+      ></button>
+    </div>
+  </div>
+  <div class="footer-nav">
+    <div class="nav-links">
+      <nav-link
+        value="Текстовые блоки"
+        (click)="scroll('textBlock')"
+      ></nav-link>
+      <nav-link value="Галерея" (click)="scroll('gallery')"></nav-link>
+      <nav-link value="Форма" (click)="scroll('formBlock')"></nav-link>
+    </div>
+    <div class="copywriting">© 2009-2020 Vasya.inc</div>
+  </div>
+</div>

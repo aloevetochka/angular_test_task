@@ -1,0 +1,14 @@
+<!--TODO Вот тут плохо-->
+<div
+  (click)="copyText(link)"
+  (click)="openMessage('Ссылка скопирована', 'OK')"
+  class="copy-form-container"
+>
+  <div class="a-link">
+    <a href="https://test.vasya.ru/api/pages/index/">
+      {{ link }}
+    </a>
+  </div>
+
+  <img src="./assets/copy-icon.svg" />
+</div>

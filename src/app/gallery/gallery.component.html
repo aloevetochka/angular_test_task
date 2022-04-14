@@ -1,0 +1,12 @@
+<div class="flex-row flex-between" #myIdentifier>
+  <gallery-item
+    [maxWidth]="imageMaxWidth"
+    *ngFor="
+      let url of mockupDataURLs.slice(0, this.visibleImageCount);
+      let indexOfElement = index
+    "
+    [photoURL]="url"
+    [lastPhoto]="indexOfElement + 1 === visibleImageCount"
+    [leastCount]="mockupDataURLs.length - this.visibleImageCount"
+  ></gallery-item>
+</div>
