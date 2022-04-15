@@ -31,6 +31,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 // TODO Разделить модули ui и компонент.
 // TODO Сделать структуру папок по вложенности компонент. Общие компоненты ui вынести в отдельный модуль.
@@ -67,6 +68,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     NgbModule,
     ReactiveFormsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

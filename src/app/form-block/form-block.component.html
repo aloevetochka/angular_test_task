@@ -41,9 +41,11 @@
             type="text"
             class="form-control"
             placeholder="Телефон"
+            pInputText
+            [textMask]="{ mask: phoneMask }"
           />
           <small *ngIf="phone?.invalid && phone?.touched" class="text-danger"
-            >Некорректный телефон (от 10 до 14 цифр)</small
+            >Некорректный телефон</small
           >
         </div>
         <div class="txt">Для телефона нужна маска для ввода</div>
@@ -75,16 +77,27 @@
         </div>
       </div>
       <div class="button-container">
-        <button
-          (click)="clicksub()"
-          [disabled]="
-            email?.invalid || phone?.invalid || message?.invalid || !value
-          "
-          type="button"
-          class="btn btn-primary"
-        >
-          Отправить сообщение
-        </button>
+        <div class="show-message">
+          <button
+            (click)="clicksub()"
+            [disabled]="
+              email?.invalid || phone?.invalid || message?.invalid || !value
+            "
+            type="button"
+            class="btn btn-primary"
+          >
+            Отправить сообщение
+          </button>
+          <div *ngIf="clicked">
+            <div class="done-message">
+              <mat-icon>check_circle_outline</mat-icon>
+              <div class="done-message-text">
+                Письмо для активации аккаунта успешно отправлено на адрес
+                электронной почты, который вы указали при регистрации.
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="txt btn-margin">
           У кнопки несколько состояний. Яркой и синей она становится когда все
@@ -92,84 +105,5 @@
         </div>
       </div>
     </form>
-    <!-- <div class="name-container cnt">
-      <div class="info-form">
-        <input
-          [(ngModel)]="name"
-          type="text"
-          placeHolder="Ваше имя"
-          pInputText
-        />
-      </div>
-
-      <div class="name-text txt">
-        Имя нас не сильно волнует и это поле необязательное
-      </div>
-    </div>
-    <div class="phone-container cnt">
-      <div class="info-form">
-        <input
-          [(ngModel)]="phone"
-          type="text"
-          placeHolder="Телефон"
-          pInputText
-          [textMask]="{ mask: phoneMask }"
-        />
-      </div>
-      <div class="phone-text txt">Для телефона нужна маска для ввода</div>
-    </div>
-    <div class="mail-container cnt">
-      <div class="info-form">
-        <input
-          [(ngModel)]="email"
-          type="text"
-          placeHolder="Электронная почта"
-          pInputText
-        />
-      </div>
-      <div class="mail-text txt">
-        Почту нужно валидировать, что пользователь точно указал адекватный и
-        похожий на настоящий адрес
-      </div>
-    </div>
-    <div class="text-container cnt">
-      <div class="text-form">
-        <textarea
-          [(ngModel)]="text"
-          placeHolder="Сообщение"
-          pInputTextarea
-        ></textarea>
-      </div>
-      <div class="text-text txt">
-        Без сообщения форму отправлять бессмысленно
-      </div>
-    </div>
-    <div class="check-container cnt">
-      <div class="field-checkbox">
-        <p-checkbox (click)="checkboxChange()" [binary]="true"></p-checkbox>
-      </div>
-      <div class="check-text">
-        Согласен с правилами обработки моих
-        <br />
-        персональных данных
-      </div>
-      <div class="txt none check-txt">
-        Форма отправляется только, если отметка с согласием стоит
-      </div>
-    </div>
-    <div class="btn-container cnt">
-      <div class="done-btn">
-        <button
-          pButton
-          type="button"
-          label="Отправить сообщение"
-          [disabled]="!phone || !validateEmail(email) || !text || !value"
-        ></button>
-      </div>
-      <div class="txt btn-txt">
-        У кнопки несколько состояний. Яркой и синей она становится когда все
-        нормально и форму можно отправлять.
-      </div>
-    </div> -->
   </div>
 </div>
