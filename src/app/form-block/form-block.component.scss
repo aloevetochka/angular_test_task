@@ -69,6 +69,7 @@
   }
   .button-container {
     display: flex;
+    margin-bottom: 60px;
   }
   button {
     height: 60px;
@@ -84,6 +85,20 @@
   }
   .btn-margin {
     margin-left: 255px;
+  }
+  .done-message {
+    margin-top: 15px;
+    display: flex;
+    mat-icon {
+      color: $basic;
+      font-size: 30px;
+    }
+    .done-message-text {
+      @extend %montRegular;
+      font-size: 18px;
+      max-width: 320px;
+      margin-left: 10px;
+    }
   }
 }
 

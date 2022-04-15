@@ -9,16 +9,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormBlockComponent implements OnInit {
   exform!: FormGroup;
+  clicked: boolean;
 
   ngOnInit() {
     this.exform = new FormGroup({
-      // name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       phone: new FormControl(null, [
         Validators.required,
-        Validators.pattern(
-          '^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$'
-        ),
+        Validators.pattern(/\(\d\d\d\) \d\d\d-\d\d-\d\d/gm),
       ]),
       message: new FormControl(null, [
         Validators.required,
@@ -29,6 +27,10 @@ export class FormBlockComponent implements OnInit {
 
   clicksub() {
     console.log(this.exform.value);
+    this.clicked = true;
+    setTimeout(() => {
+      this.clicked = false;
+    }, 5000);
     this.exform.reset();
   }
   get name() {
@@ -43,41 +45,32 @@ export class FormBlockComponent implements OnInit {
   get message() {
     return this.exform.get('message');
   }
-  // name: string = '';
-  // phone: string = '';
-  // email: string = '';
-  // text: string = '';
+
   value: boolean = false;
 
-  // phoneMask = [
-  //   '(',
-  //   /[1-9]/,
-  //   /\d/,
-  //   /\d/,
-  //   ')',
-  //   ' ',
-  //   /\d/,
-  //   /\d/,
-  //   /\d/,
-  //   '-',
-  //   /\d/,
-  //   /\d/,
-  //   '-',
-  //   /\d/,
-  //   /\d/,
-  // ];
+  phoneMask = [
+    '(',
+    /[1-9]/,
+    /\d/,
+    /\d/,
+    ')',
+    ' ',
+    /\d/,
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+    '-',
+    /\d/,
+    /\d/,
+  ];
 
-  // constructor() {}
+  constructor() {
+    this.clicked = false;
+  }
 
   checkboxChange() {
     this.value = !this.value;
   }
-
-  // validateEmail(email: string) {
-  //   const emailRegexp =
-  //     /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-  //   return emailRegexp.test(email);
-  // }
-
-  // ngOnInit(): void {}
 }
