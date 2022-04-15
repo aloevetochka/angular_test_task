@@ -1,8 +1,13 @@
 @import "../../styles.scss";
 
-.cnt {
-  display: flex;
+.txt {
+  @extend %montRegular;
+  font-size: 18px;
+  line-height: 160%;
+  color: $greyDark;
+  margin-left: 49px;
 }
+
 .form-block-container {
   width: 1088px;
   position: relative;
@@ -19,79 +24,81 @@
   }
   .form-block {
     margin-top: 50px;
+    max-width: 1088px;
+    .form-group {
+      margin-bottom: 30px;
+      display: flex;
 
-    .info-form {
+      textarea {
+        width: 538px;
+        height: 130px;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        @extend %montBold;
+        font-size: 18px;
+        line-height: 160%;
+        color: $greyDark;
+      }
       input {
         width: 538px;
         height: 50px;
-        margin-bottom: 30px;
-
+      }
+      .placeholder-reg::placeholder {
         @extend %montRegular;
         font-size: 18px;
         line-height: 160%;
-        padding-left: 16px;
-      }
-    }
-    .text-form {
-      textArea {
-        width: 538px;
-        height: 130px;
-        margin-bottom: 30px;
-
-        @extend %montRegular;
-        font-size: 18px;
-        line-height: 160%;
-        padding-left: 16px;
-        padding-top: 5px;
-      }
-    }
-    .txt {
-      @extend %montRegular;
-      color: $greyDark;
-      margin-left: 49px;
-      margin-top: 3px;
-      line-height: 160%;
-    }
-    .check-text {
-      @extend %montRegular;
-      font-size: 16px;
-      line-height: 160%;
-      margin-left: 10px;
-      width: 50%;
-    }
-    .check-txt {
-      margin-left: 25px;
-    }
-    .btn-container {
-      margin-top: 30px;
-      .done-btn {
-        button {
-          min-width: 306px;
-          height: 60px;
-          @extend %montBold;
-          font-size: 20px;
-          line-height: 160%;
-          background-color: $basic;
-          margin-bottom: 80px;
-        }
-      }
-      .btn-txt {
-        margin-left: 285px;
+        color: $greyDark;
       }
     }
     .field-checkbox {
-      max-width: 550px;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 38px;
+      p-checkbox {
+        margin-top: 3px;
+        margin-right: 13px;
+      }
     }
-
-    p-checkbox {
-      margin-bottom: 3px;
-      width: 25px;
-      height: 25px;
+    .check-text {
+      @extend %montRegular;
+      font-size: 18px;
+      line-height: 160%;
     }
+  }
+  .button-container {
+    display: flex;
+  }
+  button {
+    height: 60px;
+    min-width: 335px;
+    border-radius: 8px;
+    @extend %montBold;
+    font-size: 20px;
+    line-height: 160%;
+  }
+  button:disabled {
+    background-color: rgb(111, 175, 218);
+    border: 1px;
+  }
+  .btn-margin {
+    margin-left: 255px;
   }
 }
 
+.form-control.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid {
+  border: 1px solid green;
+}
+
 @media (max-width: $mobile) {
+  .txt {
+    margin: 15px 0px 25px 0px;
+  }
+
   .form-block-container {
     max-width: 335px;
     position: "relative";
@@ -106,41 +113,26 @@
       font-size: 30px;
     }
     .form-block {
-      .info-form {
-        input {
-          width: 335px;
-          margin-bottom: 3px;
-        }
-      }
-      .text-form {
-        textArea {
-          width: 335px;
-          margin-bottom: 3px;
-        }
-      }
-      .txt {
-        max-width: 100%;
-        margin-bottom: 20px;
-        margin-left: 3px;
-      }
+      .form-group {
+        display: inline;
 
-      .check-container {
-        .check-text {
-          min-width: 85%;
+        input,
+        textarea {
+          width: 335px;
         }
-      }
-      .btn-txt {
-        margin-left: 0px !important;
       }
     }
   }
 
-  .cnt {
-    max-width: 400px;
-    flex-wrap: wrap;
+  .btn-margin {
+    margin-left: 0px !important;
   }
 
-  .none {
+  .button-container {
+    display: inline !important;
+  }
+
+  .display-none {
     display: none;
   }
 }

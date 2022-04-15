@@ -29,6 +29,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryItemComponent } from './gallery-item/gallery-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // TODO Разделить модули ui и компонент.
 // TODO Сделать структуру папок по вложенности компонент. Общие компоненты ui вынести в отдельный модуль.
@@ -63,6 +65,8 @@ import { GalleryItemComponent } from './gallery-item/gallery-item.component';
     CheckboxModule,
     FormsModule,
     CommonModule,
+    NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
